@@ -41,16 +41,16 @@ public class Main {
 
             System.out.println("¡Muchas gracias!\nAquí tienes tu matriz:");
 
-            int[][] array = new int[(numeroFilas)][(numeroColumnas)];
+            int[][] matriz = new int[(numeroFilas)][(numeroColumnas)];
 
-            for (int i = 0; i < array.length; i++) {
-                for (int j = 0; j < array[i].length; j++) {
-                    array[i][j] = new Random().nextInt(9 + 1 - 1) + 1;
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz[i].length; j++) {
+                    matriz[i][j] = new Random().nextInt(9 + 1 - 1) + 1;
                 }
             }
-            for (int i = 0; i < array.length; i++) {
-                for (int j = 0; j < array[i].length; j++) {
-                    System.out.print(array[i][j] + " ");
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz[i].length; j++) {
+                    System.out.print(matriz[i][j] + " ");
                 }
                 System.out.println();
             }
@@ -72,38 +72,44 @@ public class Main {
                         switch (opcionMenu) {
                             case 2:
                                 System.out.println("Has seleccionado Poner Bomba");
-                                int x = 0;
-                                int y = 0;
-                                /*while (x < 1 || y > 9) {
-                                    System.out.println("Introduce dos coordenadas para hacer explotar la bomba.\n Recuerda que debe ser un número del 1-9");
-                                    if (input.hasNextInt()) {
-                                        x = input.nextInt();
-                                        if (x < 1 || x > 9) {
-                                            System.out.println("Has escogido un numero incorrecto.\nPor favor vuelve a introducir un numero del 1-9"); */
-                                while (x < 1 || x > 9) {
-                                    System.out.println("Introduce la primera coordenada detonar la bomba:   ");
+                                int filasEscogidas = 0;
+                                int columnasEscogidas = 0;
+                                while (filasEscogidas < 1 || filasEscogidas > (numeroFilas-1) ) {
+                                    System.out.println("Introduce la primera coordenada detonar la bomba entre 0 -   " + (numeroFilas -1));
                                      if (input.hasNextInt()) {
-                                        x = input.nextInt();
-                                        if (x < 1 || x > 9) {
-                                            System.out.println("Has escogido un numero incorrecto.\nPor favor vuelve a introducir un numero del 1-9");
+                                        filasEscogidas = input.nextInt();
+                                        if (filasEscogidas < 1 || filasEscogidas > (numeroFilas-1)) {
+                                            System.out.println("Has escogido un numero incorrecto.\nPor favor vuelve a introducir un numero entre 0 - " + (numeroFilas-1));
                                         }
+                                    }else{
+                                         System.out.println("El número/carácter introducido no es válido");
+                                     }
+                                }
+                                while (columnasEscogidas < 1 || columnasEscogidas > (numeroColumnas-1)) {
+                                    System.out.println("Introduce la segunda coordenada para detonar la bomba entre 0 -  " + (numeroColumnas-1));
+                                    if (input.hasNextInt()) {
+                                        columnasEscogidas = input.nextInt();
+                                        if (columnasEscogidas < 1 || columnasEscogidas > (numeroColumnas-1)) {
+                                            System.out.println("Has escogido un numero incorrecto.\nPor favor vuelve a introducir un numero entre 0 -" + (numeroColumnas-1));
+                                        break;
+                                        }
+                                    } else {
+                                        System.out.println("El número/carácter introducido no es válido");
                                     }
                                 }
-                                while (y < 1 || y > 9) {
-                                    System.out.println("Introduce la segunda coordenada para detonar la bomba:   ");
-                                    if (input.hasNextInt()) {
-                                        y = input.nextInt();
-                                        if (y < 1 || y > 9) {
-                                            System.out.println("Has escogido un numero incorrecto.\nPor favor vuelve a introducir un numero del 1-9");
-                                        }
-                                    } //desde aqui tengo pendiente añadir la explosión de la bomba
-                                }
+                                int valorColumna = 0;
+                                int valorFila = 0;
+                                for (int i = 0; i<matriz.length; i++){
+                                    valorColumna += matriz [i][columnasEscogidas];
+                               }
                                 break;
+
+
                             case 1:
                                 System.out.println("¡Aquí tienes tu matriz!");
-                                for (int i = 0; i < array.length; i++) {
-                                    for (int j = 0; j < array[i].length; j++) {
-                                        System.out.print(array[i][j] + " ");
+                                for (int i = 0; i < matriz.length; i++) {
+                                    for (int j = 0; j < matriz[i].length; j++) {
+                                        System.out.print(matriz[i][j] + " ");
                                                                            }
                                     System.out.println();
                                 }
