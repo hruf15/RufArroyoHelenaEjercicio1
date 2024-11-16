@@ -72,25 +72,25 @@ public class Main {
                         switch (opcionMenu) {
                             case 2:
                                 System.out.println("Has seleccionado Poner Bomba");
-                                int filasEscogidas = 0;
-                                int columnasEscogidas = 0;
-                                while (filasEscogidas < 1 || filasEscogidas > (numeroFilas-1) ) {
+                                int filasEscogidas = -1;
+                                int columnasEscogidas = -1;
+                                while (filasEscogidas <= 0 || filasEscogidas > (numeroFilas-1) ) {
                                     System.out.println("Introduce la primera coordenada detonar la bomba entre 0 -   " + (numeroFilas -1));
                                      if (input.hasNextInt()) {
                                         filasEscogidas = input.nextInt();
-                                        if (filasEscogidas < 1 || filasEscogidas > (numeroFilas-1)) {
+                                        if (filasEscogidas < 0 || filasEscogidas > (numeroFilas-1)) {
                                             System.out.println("Has escogido un numero incorrecto.\nPor favor vuelve a introducir un numero entre 0 - " + (numeroFilas-1));
                                         }
                                     }else{
                                          System.out.println("El número/carácter introducido no es válido");
                                      }
                                 }
-                                while (columnasEscogidas < 1 || columnasEscogidas > (numeroColumnas-1)) {
-                                    System.out.println("Introduce la segunda coordenada para detonar la bomba entre 0 -  " + (numeroColumnas-1));
+                                while (columnasEscogidas <=0 || columnasEscogidas > (numeroColumnas-1)) {
+                                    System.out.println("Introduce la segunda coordenada para detonar la bomba entre 0 - " + (numeroColumnas-1));
                                     if (input.hasNextInt()) {
                                         columnasEscogidas = input.nextInt();
-                                        if (columnasEscogidas < 1 || columnasEscogidas > (numeroColumnas-1)) {
-                                            System.out.println("Has escogido un numero incorrecto.\nPor favor vuelve a introducir un numero entre 0 -" + (numeroColumnas-1));
+                                        if (columnasEscogidas < 0 || columnasEscogidas > (numeroColumnas-1)) {
+                                            System.out.println("Has escogido un numero incorrecto.\nPor favor vuelve a introducir un numero entre 0 - " +(numeroColumnas-1));
                                         break;
                                         }
                                     } else {
@@ -102,8 +102,12 @@ public class Main {
                                 for (int i = 0; i<matriz.length; i++){
                                     valorColumna += matriz [i][columnasEscogidas];
                                }
+                                for (int j =0; j<matriz[filasEscogidas].length; j++){
+                                    valorFila += matriz [filasEscogidas][j];
+                                }
+                                int valorBomba = valorFila + valorColumna - matriz[filasEscogidas][columnasEscogidas];
+                                System.out.println("El valor de la explosión es de: " + valorBomba);
                                 break;
-
 
                             case 1:
                                 System.out.println("¡Aquí tienes tu matriz!");
