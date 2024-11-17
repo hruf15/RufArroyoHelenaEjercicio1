@@ -13,3 +13,5 @@ Si el usuario escoge la opción en el menú de ver la matriz se le mostrará por
 Si el usuario escoge la opción en el menú de salir el juego se cerrará.
 
 Para la realización de esta aplicación se ha hecho uso del material impartido en la asignatura de programación.
+
+Helena Ruf Arroyo.
