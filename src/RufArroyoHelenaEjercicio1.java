@@ -74,59 +74,61 @@ public class RufArroyoHelenaEjercicio1 {
                             System.out.println("Has seleccionado Poner Bomba");
                             int filasEscogidas = -1;
                             int columnasEscogidas = -1;
-                            while (filasEscogidas <= 0 || filasEscogidas > (numeroFilas - 1)) {
+                            while (filasEscogidas < 0 || filasEscogidas > (numeroFilas-1)) {
                                 System.out.println("Introduce la primera coordenada detonar la bomba entre 0 - " + (numeroFilas - 1));
                                 if (input.hasNextInt()) {
                                     filasEscogidas = input.nextInt();
-                                    if (filasEscogidas < 0 || filasEscogidas > (numeroFilas - 1)) {
+                                    if (filasEscogidas < 0 || filasEscogidas >= (numeroFilas - 1)) {
                                         System.out.println("Has escogido un numero incorrecto.\nPor favor vuelve a introducir un numero entre 0 - " + (numeroFilas - 1));
+                                         input.nextInt();
                                     }
                                 } else {
                                     System.out.println("El número/carácter introducido no es válido");
+                                    input.next();
                                 }
                             }
-                            while (columnasEscogidas <= 0 || columnasEscogidas > (numeroColumnas - 1)) {
+                            while (columnasEscogidas <= 0 || columnasEscogidas >= numeroColumnas) {
                                 System.out.println("Introduce la segunda coordenada para detonar la bomba entre 0 - " + (numeroColumnas - 1));
                                 if (input.hasNextInt()) {
                                     columnasEscogidas = input.nextInt();
-                                    if (columnasEscogidas < 0 || columnasEscogidas > (numeroColumnas - 1)) {
+                                    if (columnasEscogidas < 0 || columnasEscogidas >= numeroColumnas) {
                                         System.out.println("Has escogido un numero incorrecto.\nPor favor vuelve a introducir un numero entre 0 - " + (numeroColumnas - 1));
                                         break;
                                     }
                                 } else {
                                     System.out.println("El número/carácter introducido no es válido");
+                                    input.next();
                                 }
                             }
                             int valorColumna = 0;
                             int valorFila = 0;
+                            for (int i = 0; i < matriz[filasEscogidas].length; i++) {
+                                valorFila += matriz[filasEscogidas][i];
+                            }
                             for (int i = 0; i < matriz.length; i++) {
                                 valorColumna += matriz[i][columnasEscogidas];
-                            }
-                            for (int j = 0; j < matriz[filasEscogidas].length; j++) {
-                                valorFila += matriz[filasEscogidas][j];
                             }
                             int valorBomba = valorFila + valorColumna - matriz[filasEscogidas][columnasEscogidas];
                             System.out.println("El valor de la explosión es de: " + valorBomba);
 
                             for (int i = 0; i < matriz.length; i++) {
-                                matriz[i][columnasEscogidas] = 0;
-                            }
-                            for (int j = 0; j < matriz[filasEscogidas].length; j++) {
-                                matriz[filasEscogidas][j] = 0;
+                                matriz[filasEscogidas][i] = 0;
                             }
 
+                            for (int i = 0; i < matriz.length; i++) {
+                                matriz[i][columnasEscogidas] = 0;
+                            }
+                            System.out.println("¡Aquí tienes tu matriz después de la explosión!");
                             for (int i = 0; i < matriz.length; i++) {
                                 for (int j = 0; j < matriz[i].length; j++) {
                                     System.out.print(matriz[i][j] + " ");
                                 }
-
                                 System.out.println();
-                                if (matriz[valorFila][valorColumna] == 0) {
-                                    System.out.println("Juego Finalizado\nGracias por participar");
-                                    exit = true;
-                                    break;
-                                }
+
                             }
+                            System.out.println("Juego Finalizado\nGracias por participar");
+                            exit = true;
+                                break;
 
                         case 1:
                             System.out.println("¡Aquí tienes tu matriz!");
