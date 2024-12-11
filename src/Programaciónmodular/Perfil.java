@@ -22,8 +22,8 @@ public class Perfil {
 
 
     public Perfil () {
-        this.name = "";
-        this.story = "";
+        this.name = " ";
+        this.story = " ";
         this.hobbies = new ArrayList<>();
         this.foods = new ArrayList<>();
         this.funFacts = new ArrayList<>();

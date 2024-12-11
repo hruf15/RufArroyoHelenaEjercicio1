@@ -74,7 +74,7 @@ public class Main {
                         System.out.println("\nFun Facts" + helena.getFunFacts());
                         break;
                     case 5:
-                        System.out.println(("Gracias por visitar el perfil. Hasta pronto 🙌"));
+                        System.out.println(("Gracias por visitar el perfil. Hasta pronto! 🙌"));
                         exit = true;
                         break;
                 }
