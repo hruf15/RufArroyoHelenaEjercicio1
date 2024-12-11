@@ -51,6 +51,7 @@ public class Perfil {
         return name;
     }
     public String getStory() {
+        return story;
     }
 
     public ArrayList<String> getFoods() {

@@ -44,59 +44,44 @@ public class Main {
         ArrayList<Perfil> perfiles = new ArrayList<>();
         perfiles.add(helena);
 
-        Scanner scanner=new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         boolean exit = false;
-        int opcionMenu;
 
-        do{
+        while (!exit) {
             System.out.println("\nMenú AboutMe [" + helena.getName() + "]");
             System.out.println("[1] 📖 Story ");
             System.out.println("[2] 🎳 Hobbies ");
             System.out.println("[3] 🍕 Foods ");
             System.out.println("[4] 😂 Fun Facts ");
             System.out.println("[5] 📤 Salir ");
+            System.out.println("Selecciona una opción: ");
 
+            if (scanner.hasNextInt()) {
+                int opcionMenu = scanner.nextInt();
+                scanner.nextLine();
 
-            switch (opcionMenu) {
-                case 1:
-                    System.out.println("\nStory: " + helena.getStory());
-                    break;
-                case 2:
-                    System.out.println("\nHobbies: " + helena.getHobbies());
-                    break;
-                case 3:
-                    System.out.println("\nFoods: " + helena.getFoods());
-                    break;
-                case 4:
-                    System.out.println("\nFun Facts" + helena.getFunFacts());
-                    break;
-                case 5:
-                    System.out.println(("\n Gracias por visitar el perfil. Hasta pronto 🙌"));
-                    exit=true;
+                switch (opcionMenu) {
+                    case 1:
+                        System.out.println("\nStory: " + helena.getStory());
+                        break;
+                    case 2:
+                        System.out.println("\nHobbies: " + helena.getHobbies());
+                        break;
+                    case 3:
+                        System.out.println("\nFoods: " + helena.getFoods());
+                        break;
+                    case 4:
+                        System.out.println("\nFun Facts" + helena.getFunFacts());
+                        break;
+                    case 5:
+                        System.out.println(("Gracias por visitar el perfil. Hasta pronto 🙌"));
+                        exit = true;
+                        break;
+                }
+            }else{
+                System.out.println("Opción no válida. Ingresa un número del 1-5");
+                scanner.nextLine();
             }
         }
     }
 }
-
-/*
-        boolean exit = false;
-        int menuConsola;
-
-        /*
-        do {
-            System.out.println("Menú AboutMe");
-            System.out.println("[1] Story ");
-            System.out.println("[2] Favorites ");
-            System.out.println("[3] Fun Fact ");
-            System.out.println("[4] Salir ");
-
-            if (input.hasNextInt()) {
-                menuConsola = input.nextInt();
-                input.nextLine();
-                switch (menuConsola) {
-
-                }
-            }
-        }
-    }
-    } */
