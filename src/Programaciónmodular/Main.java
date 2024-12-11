@@ -10,27 +10,33 @@ public class Main {
     }
 
     public void inicio() {
-        System.out.println("Bienvenid@ a AboutMe");
+        System.out.println("Bienvenid@ a AboutMe 😊");
 
         Perfil helena = new Perfil();
-        helena.setName ("Helena");
-        helena.setStory ("Soy Educadora y Trabajadora Social y estoy estudiando DAM");
+        helena.setName("Helena");
+        helena.setStory("\n - Educadora y Trabajadora Social.\n - Estudiante de DAM \n - Tengo 27 años");
 
         ArrayList<String> hobbies = new ArrayList<>();
         hobbies.add("Padel");
         hobbies.add("Series");
         hobbies.add("Animales");
+        hobbies.add("Viajar");
+        hobbies.add("Compartir tiempo con amigos");
+        helena.setHobbies(hobbies);
 
         ArrayList<String> food = new ArrayList<>();
         food.add("Comida italiana");
         food.add("comida tailandesa");
         food.add("comida mejicana");
+        helena.setFoods(food);
 
         ArrayList<String> funFacts = new ArrayList<>();
         funFacts.add("Fan de Taylor Swift");
         funFacts.add("Tengo 4 animales de compañía");
         funFacts.add("me gusta cocinar pizzas");
+        helena.setFunFacts(funFacts);
 
+        System.out.println("\nA continuación te mostramos la información de tu perfil:\n");
         System.out.println(helena.toString());
         System.out.print("");
 

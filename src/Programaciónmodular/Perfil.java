@@ -12,22 +12,21 @@ public class Perfil {
 
     @Override
     public String toString() {
-        return "Perfil{" +
-                "name='" + name + '\'' +
-                ", story='" + story + '\'' +
-                ", hobbies=" + hobbies +
-                ", foods=" + foods +
-                ", funFacts=" + funFacts +
-                '}';
+        return "Perfil 👥" + "\n" +
+                "🗣️ Name: " + name + "\n" +
+                "📖 Story: " + story + "\n" +
+                "🎳 Hobbies: " + hobbies + "\n" +
+                "🍕 Foods: " + foods + "\n" +
+                "😂 FunFacts: " + funFacts;
     }
 
 
-    public Perfil (String name, String story, ArrayList<String> hobbies, ArrayList<String> foods, ArrayList<String> funFacts) {
-        this.name = name;
-        this.story = story;
-        this.hobbies = hobbies;
-        this.foods = foods;
-        this.funFacts = funFacts;
+    public Perfil () {
+        this.name = "";
+        this.story = "";
+        this.hobbies = new ArrayList<>();
+        this.foods = new ArrayList<>();
+        this.funFacts = new ArrayList<>();
     }
 
     public void setName(String name) {
