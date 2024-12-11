@@ -44,11 +44,11 @@ public class Main {
         ArrayList<Perfil> perfiles = new ArrayList<>();
         perfiles.add(helena);
 
-
+        Scanner scanner=new Scanner(System.in);
         boolean exit = false;
         int opcionMenu;
 
-        do {
+        do{
             System.out.println("\nMenú AboutMe [" + helena.getName() + "]");
             System.out.println("[1] 📖 Story ");
             System.out.println("[2] 🎳 Hobbies ");
