@@ -47,4 +47,21 @@ public class Perfil {
     public void setFunFacts(ArrayList<String> funFacts) {
         this.funFacts = funFacts;
     }
+    public String getName() {
+        return name;
+    }
+    public String getStory() {
+    }
+
+    public ArrayList<String> getFoods() {
+        return foods;
+    }
+
+    public ArrayList<String> getFunFacts() {
+        return funFacts;
+    }
+
+    public ArrayList<String> getHobbies() {
+        return hobbies;
+    }
 }
